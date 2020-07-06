@@ -29,13 +29,6 @@ public class AuthController {
 	@PostMapping("/login")
 	public String login(@RequestBody LoginRequest loginRequest) throws Exception {
 		String msg = authService.login(loginRequest);
-		if (msg != null)
-		{
-			return "Welcome";
-		}
-		else {
-			
-			return "Invalid Credentials";
-		}
+		return msg;
 	}
 }
